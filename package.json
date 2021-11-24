@@ -3,7 +3,12 @@
 	"displayName": "joke",
 	"description": "show a random joke",
 	"version": "0.0.1",
-	"keywords": ["笑话","笑话大全","幽默"],
+	"publisher":"menghuiguli",
+	"keywords": [
+		"笑话",
+		"笑话大全",
+		"幽默"
+	],
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -17,11 +22,13 @@
 	"main": "./out/extension.js",
 	"contributes": {
 		"viewsContainers": {
-			"activitybar": [{
-				"id": "jokeMenu",
-				"title": "Joke",
-				"icon": "src/resources/joke.svg"
-			}]
+			"activitybar": [
+				{
+					"id": "jokeMenu",
+					"title": "Joke",
+					"icon": "src/resources/joke.svg"
+				}
+			]
 		},
 		"views": {
 			"jokeMenu": [
@@ -35,7 +42,7 @@
 			{
 				"command": "joke.prev",
 				"title": "上一页",
-				"icon":{
+				"icon": {
 					"dark": "src/resources/dark/prev.svg",
 					"light": "src/resources/light/prev.svg"
 				}
