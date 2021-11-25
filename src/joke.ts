@@ -15,7 +15,7 @@ export class JokeTreeItem extends TreeItem {
     this.label = info.id  + "";
     this.id = String(info.id);
     this.tooltip = '点击查看详情';
-    this.iconPath = Uri.file(path.join(__filename,'..', '..' ,'src' ,'resources','Smile.png'));
+    this.iconPath = Uri.file(path.join(__filename,'..', '..' ,'resources','Smile.png'));
     this.command = {
       title: '今日笑话',
       command: 'joke.click',

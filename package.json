@@ -3,7 +3,7 @@
 	"displayName": "joke",
 	"description": "show a random joke",
 	"version": "0.0.2",
-	"icon": "images/laugh.png",
+	"icon": "resources/laugh.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/dreamfly2012/vscode_extension_joke"
@@ -31,7 +31,7 @@
 				{
 					"id": "jokeMenu",
 					"title": "Joke",
-					"icon": "src/resources/joke.svg"
+					"icon": "resources/joke.svg"
 				}
 			]
 		},
@@ -48,16 +48,16 @@
 				"command": "joke.prev",
 				"title": "上一页",
 				"icon": {
-					"dark": "src/resources/dark/prev.svg",
-					"light": "src/resources/light/prev.svg"
+					"dark": "resources/dark/prev.svg",
+					"light": "resources/light/prev.svg"
 				}
 			},
 			{
 				"command": "joke.next",
 				"title": "下一页",
 				"icon": {
-					"dark": "src/resources/dark/next.svg",
-					"light": "src/resources/light/next.svg"
+					"dark": "resources/dark/next.svg",
+					"light": "resources/light/next.svg"
 				}
 			}
 		]

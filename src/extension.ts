@@ -18,22 +18,36 @@ export function activate(context: vscode.ExtensionContext) {
 
     vscode.window.registerTreeDataProvider('view.joke',new JokeDataProvider(service));
 
-	const panel = vscode.window.createWebviewPanel(
+	let panel = vscode.window.createWebviewPanel(
 			'viewType', // viewType
 			"笑话大全", // 视图标题
 	vscode.ViewColumn.One, // 显示在编辑器的哪个部位
 	{
-		// enableScripts: true, // 启用JS，默认禁用
-		// retainContextWhenHidden: true, // webview被隐藏时保持状态，避免被重置
+		enableScripts: true, // 启用JS，默认禁用
+		retainContextWhenHidden: true, // webview被隐藏时保持状态，避免被重置
 	}
 	);
 
-	const stylecss = vscode.Uri.file(
-		path.join(context.extensionPath, 'resources', 'style.css')
-	);
+	let created = true;
 
+	
 
 	let showcontent = vscode.commands.registerCommand('joke.click', (hasdId,content)=>{
+		if(!created){
+			panel = vscode.window.createWebviewPanel(
+						'viewType', // viewType
+						"笑话大全", // 视图标题
+				vscode.ViewColumn.One, // 显示在编辑器的哪个部位
+				{
+					enableScripts: true, // 启用JS，默认禁用
+					retainContextWhenHidden: true, // webview被隐藏时保持状态，避免被重置
+				}
+				);
+				panel.onDidDispose(()=>{
+					created = false;
+				},null,context.subscriptions)
+			 created = true;
+		}
 		panel.webview.html = `<html>
 			<head>笑话大全</head>
 			<style>
@@ -49,6 +63,12 @@ export function activate(context: vscode.ExtensionContext) {
 		  </div>
         </body></html>`;
 	});
+
+	panel.onDidDispose(()=>{
+		created = false;
+	},null,context.subscriptions)
+
+	
 
 	context.subscriptions.push(showcontent);
 
