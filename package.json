@@ -2,7 +2,8 @@
 	"name": "joke",
 	"displayName": "joke",
 	"description": "show a random joke",
-	"version": "0.0.1",
+	"version": "0.0.2",
+	"icon": "src/resources/laugh.png",
 	"publisher":"menghuiguli",
 	"keywords": [
 		"笑话",
