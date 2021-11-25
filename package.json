@@ -2,7 +2,7 @@
 	"name": "joke",
 	"displayName": "joke",
 	"description": "show a random joke",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"icon": "resources/laugh.png",
 	"repository": {
 		"type": "git",
