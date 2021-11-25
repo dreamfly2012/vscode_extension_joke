@@ -4,6 +4,10 @@
 	"description": "show a random joke",
 	"version": "0.0.2",
 	"icon": "src/resources/laugh.png",
+	"repository": {
+		"type": "git",
+    	"url": "https://github.com/dreamfly2012/vscode_extension_joke"
+	},
 	"publisher":"menghuiguli",
 	"keywords": [
 		"笑话",
